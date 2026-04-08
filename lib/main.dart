@@ -8,10 +8,15 @@ void main() async {
   WidgetsFlutterBinding.ensureInitialized();
   
   if (AppConfig.isCloudReady) {
-    await Supabase.initialize(
-      url: AppConfig.supabaseUrl,
-      anonKey: AppConfig.supabaseAnonKey,
-    );
+    try {
+      await Supabase.initialize(
+        url: AppConfig.supabaseUrl,
+        anonKey: AppConfig.supabaseAnonKey,
+      );
+    } catch (e) {
+      debugPrint("SUPABASE INIT FAILED: FALLING BACK TO LOCAL MODE. Error: $e");
+      // Optionally toggle a global flag or show a non-fatal warning
+    }
   }
   
   runApp(const ExecutionOSApp());
