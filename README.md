@@ -43,7 +43,7 @@ A dedicated focus timer that integrates native **Haptic Feedback** and **Wakeloc
 
 1.  **Clone & Install**:
     ```bash
-    git clone https://github.com/YOUR_USERNAME/execution-os.git
+    git clone https://github.com/raghavendrashivam474/execution-os.git
     cd execution_os
     flutter pub get
     ```
